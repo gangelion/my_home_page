@@ -1,0 +1,97 @@
+@keyframes fadeIn {
+  0% {
+    opacity: 0
+  }
+  100% {
+    opacity: 1
+  }
+}
+
+@-webkit-keyframes fadeIn {
+  0% {
+    opacity: 0
+  }
+  100% {
+    opacity: 1
+  }
+}
+
+.main__title {
+  background-image: url(/assets/apple-691282_1920.jpg);
+  background-size: cover;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  color: white;
+  font-size: 100px;
+  animation: fadeIn 4s ease 0s 1 normal;
+  -webkit-animation: fadeIn 4s ease 0s 1 normal;
+}
+
+.menu {
+  text-decoration: none !important;
+  color: black;
+  height: 50px;
+  line-height: 50px;
+}
+
+.menu:hover {
+  opacity: 0.7;
+  background-color: #fdca00;
+  height: 50px;
+  line-height: 50px;
+}
+
+.profile__image {
+  height: 300px;
+  width: 300px;
+  border-radius: 5px;
+}
+
+.fa-twitter-square {
+  font-size: 50px;
+}
+
+.fa-facebook-square {
+  font-size: 50px;
+}
+
+.fa-github-square {
+  font-size: 50px;
+}
+
+.portfolio__link {
+  text-decoration: none !important;
+}
+
+.fa-star {
+  color: #fdca00;
+}
+
+.fa-star-half {
+  color: #fdca00;
+}
+
+.move_to_top_icon {
+  position: fixed;
+  color: #13b1c0;
+  font-size: 70px;
+  right: 100px;
+  bottom: 100px;
+}
+
+.move_to_top_icon:hover {
+  cursor: pointer;
+  opacity: 0.5;
+}
+
+.fade-enter-active,
+.fade-leave-active {
+  transition: opacity .5s;
+}
+
+.fade-enter,
+.fade-leave-to {
+  opacity: 0;
+}
