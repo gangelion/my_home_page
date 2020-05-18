@@ -1,0 +1,112 @@
+#app
+  %h1.main__title.col-12.text-center.mb-5 Hello,World!
+  .container
+    .row
+      .menu__list.col-12.d-flex.text-center.my-5
+        %a.menu.col-2.text-center{:href => "#profile"} Profile
+        %a.menu.col-2.text-center{:href => "#portfolio"} Portfolio
+        %a.menu.col-2.text-center{:href => "#blog"} Blog
+        %a.menu.col-2.text-center{:href => "#skill"} Skill
+        %a.menu.col-2.text-center{:href => "https://github.com/gangelion", :target => "_blank"} Github
+        %a.menu.col-2.text-center{:href => "#contact"} Contact
+    .row
+      %h2#profile.profile.col-12.text-center.my-5 Profile
+      .d-flex.col-12
+        .profile__content.col-6
+          1991年5月29日生まれ 東京都出身。
+          %br>/
+          趣味は
+          %br>/
+          ・英語学習（毎日オンライン英会話を継続中）
+          %br>/
+          ・読書（年間150冊読んだことも。最近は技術本を読み漁る）
+          %br>/
+          ・旅行（海外旅行が好き、アメリカ、インドネシア、ペルーなど）
+          %br>/
+          ・筋トレ（過去にベストボディジャパンに出場した経験あり）
+          %br>/
+          2015~2019 東京消防庁消防官
+          %br>/
+          2019~ エンジニアへ
+          .sns.mt-5
+            %a{:href => "https://twitter.com/tetsuyakojima86", :target => "_blank"}
+              %i.fab.fa-twitter-square.mx-2
+            %a{:href => "https://www.facebook.com/profile.php?id=100015453796123", :target => "_blank"}
+              %i.fab.fa-facebook-square.mx-2
+            %a{:href => "https://github.com/gangelion", :target => "_blank"}
+              %i.fab.fa-github-square.mx-2
+        .col-6.d-flex.justify-content-center
+          %img.profile__image{:alt => "プロフィール画像", :src => "assets/T1MLERC4C-UR31TJGLT-bffc2f115b74-512.jpg"}/
+    .row
+      %h2#portfolio.portfolio.col-12.text-center.my-5 Portfolio
+      %h3.col-12.text-center.mb-5
+        firstskillapp
+        %a.portfolio__link{:href => "https://firstskillapp.com", :target => "_blank"} https://firstskillapp.com
+      %img.col-4{:alt => "ポートフォリオ", :src => "assets/screencapture-18-178-33-110-2020-03-27-11_45_19.png"}/
+      %img.col-4{:alt => "ポートフォリオ", :src => "assets/screencapture-18-178-33-110-users-2020-03-27-11_47_18.png"}/
+      %img.col-4{:alt => "ポートフォリオ", :src => "assets/screencapture-localhost-3000-plans-new-2020-03-22-23_00_51.png"}/
+    .row
+      %h2#blog.blog.col-12.text-center.my-5 Blog
+      .blog__list.col-12.d-flex.text-center
+        .article.col-6 ブログ記事1
+        .article.col-6 ブログ記事2
+      .col-12.text-center
+        %a{:href => "/articles"} ブログ一覧へ
+    .row
+      %h2#skill.skill.col-12.text-center.my-5 Skill
+      .skill__list
+        %div
+          Ruby on Rails
+          %i.fas.fa-star
+        %div
+          Laravel
+          %i.fas.fa-star-half
+        %div
+          JQuery
+          %i.fas.fa-star-half
+        %div
+          Docker
+          %i.fas.fa-star
+        %div
+          CircleCI
+          %i.fas.fa-star-half
+        %div
+          AWS
+          %i.fas.fa-star
+    .row
+      %h2#contact.contact.col-12.text-center.my-5 Contact
+    %small.col-12.d-flex.justify-content-center.py-5 © 2020 tetsuya kojima
+  %v-move-to-top.move_to_top_icon
+:javascript
+  Vue.component('v-move-to-top', {
+    data() {
+      return {
+        show: false
+      };
+    },
+    template: `<transition name="fade">
+                <i class="fas fa-arrow-circle-up" v-if="show" @click="moveToTop"></i>
+              </transition>`,
+              mounted() {
+                window.addEventListener('scroll', () => {
+                  this.show = (window.scrollY > 150);
+                });
+              },
+    methods: {
+      moveToTop() {
+        const duration = 300;
+        const interval = 30;
+        const step = -window.scrollY / Math.ceil(duration / interval);
+        const timer = setInterval(() => {
+          window.scrollBy(0, step);
+          if(window.scrollY <= 0) {
+            clearInterval(timer);
+          }
+        }, interval);
+      }
+    }
+  });
+
+  new Vue({
+    el: '#app'
+  });
