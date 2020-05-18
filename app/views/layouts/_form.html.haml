@@ -1,0 +1,9 @@
+= form_with model: @article, local: true do |f|
+  .col-12.my-3
+    タイトル
+    = f.text_field :title, class: "form-control"
+  .col-12.my-3
+    本文
+    = f.text_area :content, class: "form-control", rows: 10
+  .col-12.my-3
+    = f.submit "投稿する", class: "btn btn-info"
