@@ -9,6 +9,9 @@
     %link{:href => "https://use.fontawesome.com/releases/v5.6.3/css/all.css", :rel => "stylesheet"}/
     = stylesheet_link_tag 'application', media: 'all'
     = javascript_pack_tag 'application'
-  %body
+  %body.bg-light
+    %header.bg-info
+      .header__title
+        = link_to "Kojima's Garage", articles_path
     %script{:src => "https://cdn.jsdelivr.net/npm/vue/dist/vue.js"}
     = yield
