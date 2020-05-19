@@ -9,6 +9,22 @@
     %link{:href => "https://use.fontawesome.com/releases/v5.6.3/css/all.css", :rel => "stylesheet"}/
     = stylesheet_link_tag 'application', media: 'all'
     = javascript_pack_tag 'application'
-  %body
-    %script{:src => "https://cdn.jsdelivr.net/npm/vue/dist/vue.js"}
-    = yield
+  %body.bg-light
+    %header.bg-info
+      .header__title
+        = link_to "Kojima's Garage", articles_path
+    %main
+      %script{:src => "https://cdn.jsdelivr.net/npm/vue/dist/vue.js"}
+      = yield
+    %footer.bg-white
+      .container
+        .row
+          .col-12.d-flex.my-3
+            .col-6.h3
+              About Me
+              .col-12.h6
+                = link_to "ブログ管理人について", "#"
+            .col-6.h3 Contact
+          .col-12.text-center
+            %small.col-12 © 2020 Kojima's Garage
+
