@@ -2,6 +2,10 @@
   .row
     .col-12
       = link_to "記事を編集する", edit_article_path
-    .col-12
-      = @article.title
-      = @article.content
+    .col-12.d-flex
+      .col-8
+        .h2
+          = @article.title
+        .col-12
+          = markdown(@article.content).html_safe
+      .col-4
