@@ -2,6 +2,8 @@
   = form_with model: @article, local: true do |f|
     .col-12.my-3
       = f.text_field :title, class: "form-control", placeholder: "タイトル"
+    .col-12.my-3
+      = f.file_field :images, multiple: true
     .col-12.d-flex
       .col-6.my-3
         = f.text_area :content, class: "form-control", "@input" => "update", rows: 33, placeholder: "本文"
