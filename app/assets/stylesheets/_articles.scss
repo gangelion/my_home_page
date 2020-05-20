@@ -10,3 +10,21 @@
 .article__content {
   color: darkslategray;
 }
+
+.article__image {
+  height: 300px;
+}
+
+.profile__box {
+  &_image {
+    display: block;
+    height: 250px;
+    width: 250px;
+    padding: 30px;
+    margin: 0px auto;
+    border-radius: 50%;
+  }
+  &_content {
+    padding: 0 20px;
+  }
+}
