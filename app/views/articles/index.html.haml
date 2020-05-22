@@ -13,8 +13,7 @@
             .h2.bg-white.shadow
               .article__title
                 = link_to article.title, article_path(article)
-              - article.images.each do |image|
-                = link_to image_tag(image, class: "article__image"), article_path(article)
+                = link_to image_tag(article.image, class: "article__image"), article_path(article)
         .col-4
           .profile__box.bg-white.shadow-sm
             = image_tag "T1MLERC4C-UR31TJGLT-bffc2f115b74-512.jpg", class: "profile__box_image"

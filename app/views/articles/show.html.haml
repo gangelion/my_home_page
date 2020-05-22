@@ -4,6 +4,8 @@
       = link_to "記事を編集する", edit_article_path
     .col-12.d-flex.my-5
       .article__content.col-9.bg-white.shadow-sm
+        .py-3
+          = image_tag(@article.image, class: "article__top_image")
         .h2.my-5
           = @article.title
         .col-12.mt-5.text-wrap.text-break
