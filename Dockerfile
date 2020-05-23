@@ -1,5 +1,6 @@
 FROM ruby:2.5.1
-RUN apt-get update -qq && apt-get install -y nodejs mysql-client
+RUN apt-get update -qq && apt-get install apt-transport-https && apt-get install -y nodejs mysql-client
+RUN curl -sL https://deb.nodesource.com/setup_8.x | bash && apt-get install -y npm
 RUN mkdir /my_home_page
 WORKDIR /my_home_page
 COPY Gemfile /my_home_page/Gemfile

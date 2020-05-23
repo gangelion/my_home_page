@@ -6,7 +6,7 @@
       = f.file_field :image
     .col-12.d-flex
       .col-6.my-3
-        = f.text_area :content, class: "form-control", "@input" => "update", rows: 33, placeholder: "本文"
+        = f.text_area :content, class: "form-control", "@input" => "update", "@dragenter" => "dragEnter", "@dragleave" => "dragLeave", "@drop.prevent" => "dropFile", ":class" => "{enter: isEnter}", rows: 33, placeholder: "本文"
       .form__textarea.col-6.my-3.form-control.text-wrap.text-break
         %div{ "v-html" => "compiledMarkdown" }
     .col-12
@@ -18,7 +18,9 @@
   new Vue({
     el: "#app",
     data: {
-      input: ""
+      input: "",
+      isEnter: false,
+      filse: []
     },
     computed: {
       compiledMarkdown: function () {
@@ -31,6 +33,16 @@
     methods: {
       update: _.debounce(function (e) {
         this.input = e.target.value
-      }, 300)
+      }, 300),
+      dragEnter() {
+        this.isEnter = true;
+      },
+      dragLeave() {
+        this.isEnter = false;
+      },
+      dropFile(e) {
+        this.files = [...e.dataTransfer.files]
+        this.isEnter = false;
+      }
     }
   })
