@@ -32,21 +32,34 @@
 .menu {
   text-decoration: none !important;
   color: black;
-  height: 50px;
-  line-height: 50px;
+  height: 60px;
+  line-height: 60px;
+  box-shadow: 0 0 5px 0 rgba(0, 0, 0, .12), 0 2px 3px 0 rgba(0, 0, 0, .22);
+  transition: .3s;
 }
 
 .menu:hover {
   opacity: 0.7;
-  background-color: #fdca00;
-  height: 50px;
-  line-height: 50px;
+  background-color: #13b1c0;
+  height: 60px;
+  line-height: 60px;
+  color: black;
+  box-shadow: 0 15px 30px -5px rgba(0, 0, 0, .15), 0 0 5px rgba(0, 0, 0, .1);
+  transform: translateY(-4px);
 }
 
 .profile__image {
   height: 300px;
   width: 300px;
   border-radius: 5px;
+}
+
+.sns > a {
+  color: #13b1c0;
+}
+
+.sns > a:hover {
+  opacity: 0.7;
 }
 
 .fa-twitter-square {
@@ -94,4 +107,18 @@
 .fade-enter,
 .fade-leave-to {
   opacity: 0;
+}
+
+.scroll_animation {
+  opacity: 0;
+  transition: all .5s ease;
+}
+
+.scroll_animation.show {
+  opacity: 1;
+  transform: none;
+}
+
+.scroll_up {
+  transform: translate(0, 100px);
 }
