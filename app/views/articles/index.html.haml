@@ -6,13 +6,16 @@
       .col-12
         = link_to "記事を投稿する", new_article_path
       .col-12.d-flex
-        .col-8
+        .col-9
           - @articles.each do |article|
-            .h2.bg-white.shadow
-              .article__title
-                = link_to article.title, article_path(article)
-                = link_to image_tag(article.image, class: "article__image"), article_path(article)
-        .col-4
+            .bg-white.shadow.d-flex.my-3.p-3
+              = link_to image_tag(article.image, class: "article__image"), article_path(article)
+              .text
+                .article__title.text-wrap.text-break.px-2
+                  = link_to article.title, article_path(article)
+                .article__content.text-wrap.text-break.px-2
+                  = link_to article.content, article_path(article)
+        .col-3
           .profile__box.bg-white.shadow-sm
             = image_tag "T1MLERC4C-UR31TJGLT-bffc2f115b74-512.jpg", class: "profile__box_image"
             .col-12.text-center.mt-2.mb-4

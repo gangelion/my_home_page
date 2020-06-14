@@ -1,6 +1,9 @@
 .article__title > a {
   color: darkslategray;
   text-decoration: none;
+  font-weight: bold;
+  font-size: 26px;
+  font-family: 'Courier New', Courier, monospace;
 }
 
 .article__title:hover {
@@ -8,11 +11,13 @@
 }
 
 .article__content {
-  color: darkslategray;
+  font-size: 16px;
 }
 
 .article__image {
-  height: 300px;
+  height: 250;
+  width: 250px;
+  object-fit: cover;
 }
 
 .profile__box {
@@ -32,6 +37,10 @@
 .article__top_image {
   height: 400px;
   width: 100%;
+}
+
+.show__content {
+  color: darkslategray;
 }
 
 .enter {
