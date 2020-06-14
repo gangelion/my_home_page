@@ -1,7 +1,7 @@
 #app
   %h1.main__title.col-12.text-center.mb-5 Hello,World!
   .container
-    .row
+    .row.scroll_animation.scroll_up
       .menu__list.col-12.d-flex.text-center.my-5
         %a.menu.col-2.text-center{:href => "#profile"} Profile
         %a.menu.col-2.text-center{:href => "#portfolio"} Portfolio
@@ -9,7 +9,7 @@
         %a.menu.col-2.text-center{:href => "#skill"} Skill
         %a.menu.col-2.text-center{:href => "https://github.com/gangelion", :target => "_blank"} Github
         %a.menu.col-2.text-center{:href => "#contact"} Contact
-    .row
+    .row.scroll_animation.scroll_up
       %h2#profile.profile.col-12.text-center.my-5 Profile
       .d-flex.col-12
         .profile__content.col-6
@@ -37,7 +37,7 @@
               %i.fab.fa-github-square.mx-2
         .col-6.d-flex.justify-content-center
           %img.profile__image{:alt => "プロフィール画像", :src => "assets/T1MLERC4C-UR31TJGLT-bffc2f115b74-512.jpg"}/
-    .row
+    .row.scroll_animation.scroll_up
       %h2#portfolio.portfolio.col-12.text-center.my-5 Portfolio
       %h3.col-12.text-center.mb-5
         firstskillapp
@@ -45,14 +45,14 @@
       %img.col-4{:alt => "ポートフォリオ", :src => "assets/screencapture-18-178-33-110-2020-03-27-11_45_19.png"}/
       %img.col-4{:alt => "ポートフォリオ", :src => "assets/screencapture-18-178-33-110-users-2020-03-27-11_47_18.png"}/
       %img.col-4{:alt => "ポートフォリオ", :src => "assets/screencapture-localhost-3000-plans-new-2020-03-22-23_00_51.png"}/
-    .row
+    .row.scroll_animation.scroll_up
       %h2#blog.blog.col-12.text-center.my-5 Blog
       .blog__list.col-12.d-flex.text-center
         .article.col-6 ブログ記事1
         .article.col-6 ブログ記事2
       .col-12.text-center
         = link_to "ブログ一覧へ", articles_path
-    .row
+    .row.scroll_animation.scroll_up
       %h2#skill.skill.col-12.text-center.my-5 Skill
       .skill__list
         %div
