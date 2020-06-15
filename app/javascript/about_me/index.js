@@ -1,6 +1,8 @@
 'use strict';
+import { init } from 'ityped';
 
 {
+  // scrollAnimation
   window.onload = function() {
     const scrollAnimationElement = document.querySelectorAll('.scroll_animation');
 
@@ -16,5 +18,14 @@
     }
 
     window.addEventListener('scroll', scrollAnimation);
+
+    // ityped
+    init(document.querySelector("#ityped"), {
+      strings: ['Hello World!', 'Welcome to My Site!'],
+      typeSpeed: 120,
+      backSpeed: 80,
+      startDelay: 500,
+      loop: false,
+    });
   };
 }
