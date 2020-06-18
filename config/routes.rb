@@ -6,6 +6,6 @@ Rails.application.routes.draw do
 
   resources :about_me, only: %i[index]
 
-  resources :inquiries, only: %i[new create]
+  resources :inquiries, only: %i[index new create show]
 
 end

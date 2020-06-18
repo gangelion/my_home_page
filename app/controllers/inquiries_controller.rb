@@ -1,5 +1,10 @@
 class InquiriesController < ApplicationController
   layout 'header_and_main'
+
+  def index
+    @inquiries = Inquiry.all
+  end
+
   def new
     @inquiry = Inquiry.new
   end
@@ -12,6 +17,10 @@ class InquiriesController < ApplicationController
     else
       render :new
     end
+  end
+
+  def show
+    @inquiry = Inquiry.find(params[:id])
   end
 
   private

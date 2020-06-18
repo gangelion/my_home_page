@@ -1,0 +1,13 @@
+.container
+  .row
+    .col-12
+      .inquiry__box.bg-white.text-break.shadow-sm
+        .col-12.mt-3 名前
+        = @inquiry.name
+        .col-12.mt-3 メールアドレス
+        = @inquiry.email
+        .col-12.mt-3 タイトル
+        = @inquiry.title
+        .col-12.mt-3 メッセージ
+        = @inquiry.message
+    = link_to "お問い合わせ一覧に戻る", inquiries_path, class: "my-3"
