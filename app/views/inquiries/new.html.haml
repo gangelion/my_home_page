@@ -1,0 +1,27 @@
+.container
+  .row
+    .col-12
+      = form_with model: @inquiry, local: true do |f|
+        .col-12.h3.my-5.text-center お問い合わせフォーム
+        = render 'layouts/error_messages', model: f.object
+        .d-flex
+          .mt-3 お名前
+          .mt-3.required (必須)
+        = f.text_field :name, class: "form-control", required: true, maxlength: 30
+        .d-flex
+          .mt-3 メールアドレス
+          .mt-3.required (必須)
+        = f.email_field :email, class: "form-control", required: true
+        .mt-3 件名
+        = f.text_field :title, class: "form-control", maxlength: 150
+        .d-flex
+          .mt-3 お問合わせ内容
+          .mt-3.required (必須)
+        = f.text_area :message, class: "form-control mb-5", rows: 10, required: true
+        .col-12.text-center
+          = f.submit "送信する", class: "btn btn-info mb-5", id: "inquiry_submit"
+:javascript
+  const submit = document.getElementById('inquiry_submit');
+  submit.addEventListener('click', () => {
+    confirm('送信します。よろしいですか？');
+  });

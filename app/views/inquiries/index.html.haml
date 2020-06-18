@@ -1,0 +1,15 @@
+.container
+  .row
+    .col-12
+      = "#{@inquiries&.length}件のお問い合わせが届いています。"
+    .col-12
+      - @inquiries&.each do |inquiry|
+        .inquiry__box.bg-white.text-break
+          .col-12.mt-3 名前
+          = link_to inquiry.name, inquiry_path(inquiry)
+          .col-12.mt-3 メールアドレス
+          = inquiry.email
+          .col-12.mt-3 タイトル
+          = inquiry.title
+          .col-12.mt-3 メッセージ
+          = inquiry.message
