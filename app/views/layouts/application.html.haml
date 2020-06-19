@@ -9,18 +9,11 @@
     %link{:href => "https://use.fontawesome.com/releases/v5.6.3/css/all.css", :rel => "stylesheet"}/
     = stylesheet_link_tag 'application', media: 'all'
     = javascript_pack_tag 'application'
+    %script{src: "https://cdn.jsdelivr.net/npm/vue/dist/vue.js"}
   %body.bg-light
     %header.bg-info
       .header__title
         = link_to "Kojima's Garage", articles_path
     %main
       = yield
-    %footer.bg-white
-      .container
-        .row
-          .col-12.h3.my-3.text-center Contact
-          .col-12.text-center.my-3
-            = link_to 'お問い合わせフォームへ', new_inquiry_path
-          .col-12.text-center
-            %small.col-12 © 2020 Kojima's Garage
-
+    = render 'layouts/footer'
