@@ -19,9 +19,4 @@
           .mt-3.required (必須)
         = f.text_area :message, class: "form-control mb-5", rows: 10, required: true
         .col-12.text-center
-          = f.submit "送信する", class: "btn btn-info mb-5", id: "inquiry_submit"
-:javascript
-  const submit = document.getElementById('inquiry_submit');
-  submit.addEventListener('click', () => {
-    confirm('送信します。よろしいですか？');
-  });
+          = f.submit "送信する", data: {confirm: "送信します。よろしいですか？"}, class: "btn btn-info mb-5"

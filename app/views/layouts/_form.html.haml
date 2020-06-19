@@ -10,7 +10,7 @@
       .form__textarea.col-6.my-3.form-control.text-wrap.text-break
         %div{ "v-html" => "compiledMarkdown" }
     .col-12
-      = f.submit "投稿する", class: "form__btn btn btn-info"
+      = f.submit "投稿する", data: {confirm: "投稿します。よろしいですか？"}, class: "form__btn btn btn-info"
 
 %script{src: "http://cdnjs.cloudflare.com/ajax/libs/marked/0.3.2/marked.min.js"}
 %script{src: "https://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.8.3/underscore-min.js"}
