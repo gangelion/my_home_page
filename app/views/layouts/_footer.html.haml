@@ -1,0 +1,15 @@
+%footer.bg-white
+  .container
+    .row
+      .col-6.h3.my-3.text-center Contact
+      .col-12.d-flex
+        .col-6.text-center.my-3
+          = link_to 'お問い合わせフォームへ', new_inquiry_path
+        .col-6
+          .col-12.d-flex.justify-content-end
+            = link_to "管理者用ログインページ", new_user_session_path
+          .col-12.d-flex.justify-content-end
+            - if user_signed_in?
+              = link_to "ログアウト", destroy_user_session_path, method: :delete
+      .col-12.text-center
+        %small.col-12 © 2020 Kojima's Garage
